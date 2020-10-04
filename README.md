@@ -33,8 +33,6 @@ Things you may want to cover:
 | password        | string | null: false |
 | familyname      | string | null: false |
 | name            | string | null: false |
-| kana_familyname | string | null: false |
-| kana_name       | string | null: false |
 | birthday        | string | null: false |
 
 ### Association
