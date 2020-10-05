@@ -40,13 +40,14 @@ Things you may want to cover:
 ### Association
 
 - has_many :orders
-- has_many :items, through: :orders
+- has_many :items
 - has_one :adress
 
 ## items テーブル
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
+<<<<<<< Updated upstream
 | name     | string     | null: false      |
 | explain  | text       | null: false      |
 | category | integer    | null: false      |
@@ -60,6 +61,20 @@ Things you may want to cover:
 ### Association
 
 - has_one :orders
+=======
+| name        | string   | null: false |
+| explain     | text     | null: false |
+| category_id | integer  | null: false |
+| status_id   | integer  | null: false |
+| charge_id   | integer  | null: false |
+| area_id     | integer  | null: false |
+| days_id     | integer  | null: false |
+| price       | integer  | null: false |
+
+### Association
+
+- has_one :order
+>>>>>>> Stashed changes
 - has_one :user
 
 ## orders テーブル
