@@ -26,8 +26,8 @@ Things you may want to cover:
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
+| Column          | Type    | Options     |
+| --------        | ------  | ----------- |
 | nickname        | string  | null: false |
 | mailadress      | string  | null: false |
 | password        | string  | null: false |
@@ -41,57 +41,54 @@ Things you may want to cover:
 
 - has_many :orders
 - has_many :items
-- has_one :adress
 
 ## items テーブル
 
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name     | string     | null: false      |
-| explain  | text       | null: false      |
-| category | integer    | null: false      |
-| status   | integer    | null: false      |
-| charge   | integer    | null: false      |
-| area     | integer    | null: false      |
-| days     | integer    | null: false      |
-| price    | integer    | null: false      |
-| user     | references | foreign_key: true|
+| Column      | Type       | Options                        |
+| ------      | ------     | -----------                    |
+| name        | string     | null: false                    |
+| explain     | text       | null: false                    |
+| category_id | integer    | null: false                    |
+| status_id   | integer    | null: false                    |
+| charge_id   | integer    | null: false                    |
+| area_id     | integer    | null: false                    |
+| days_id     | integer    | null: false                    |
+| price       | integer    | null: false                    |
+| user        | references | foreign_key: true, null: false |
 
 ### Association
 
 - has_one :orders
-=======
-| name        | string   | null: false |
-| explain     | text     | null: false |
-| category_id | integer  | null: false |
-| status_id   | integer  | null: false |
-| charge_id   | integer  | null: false |
-| area_id     | integer  | null: false |
-| days_id     | integer  | null: false |
-| price       | integer  | null: false |
+- has_one :adress
+
 
 ### Association
 
 - has_one :order
-- has_one :user
+- belongs_to :user
 
 ## orders テーブル
-| user_id  | integer | null: false |
-| items_id | integer | null: false |
+| Column| Type       | Options                        |
+| ------| ------     | -----------                    |
+| user  | references | foreign_key: true, null: false |
+| items | references | foreign_key: true, null: false |
 
 ### Association
 
 -  belongs_to :user
 -  belongs_to :item 
+-  has_one :adress
 
 ## adresses テーブル
-| post_number   | integer | null: false |
-| live_area     | string  | null: false |
-| live_city     | string  | null: false |
-| city_number   | integer | null: false |
-| building_name | string  | null: false |
-| phone_number  | integer | null: false |
+| Column        | Type       | Options                       |
+| ------        | ------     | -----------                   |
+| post_number   | string     | null: false                   |
+| live_area_id  | integer    | null: false                   |
+| live_city     | string     | null: false                   |
+| city_number   | integer    | null: false                   |
+| building_name | string     |                               |
+| phone_number  | string     | null: false                   |
+| order         | references | foreign_key:true, null: false |
 
 ### Association
-
-- has_one :user
+- belongs_to :user
