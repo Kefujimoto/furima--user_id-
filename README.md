@@ -47,19 +47,20 @@ Things you may want to cover:
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-| name     | string   | null: false |
-| explain  | text     | null: false |
-| category | integer  | null: false |
-| status   | integer  | null: false |
-| charge   | integer  | null: false |
-| area     | integer  | null: false |
-| days     | integer  | null: false |
-| price    | integer  | null: false |
+| name     | string     | null: false      |
+| explain  | text       | null: false      |
+| category | integer    | null: false      |
+| status   | integer    | null: false      |
+| charge   | integer    | null: false      |
+| area     | integer    | null: false      |
+| days     | integer    | null: false      |
+| price    | integer    | null: false      |
+| user     | references | foreign_key: true|
 
 ### Association
 
-- has_many :orders
-- has_many :user, through: :orders
+- has_one :orders
+- has_one :user
 
 ## orders テーブル
 | user_id  | integer | null: false |
@@ -71,7 +72,12 @@ Things you may want to cover:
 -  belongs_to :item 
 
 ## adresses テーブル
-| user_adress | string | null: false |
+| post_number   | integer | null: false |
+| live_area     | string  | null: false |
+| live_city     | string  | null: false |
+| city_number   | integer | null: false |
+| building_name | string  | null: false |
+| phone_number  | integer | null: false |
 
 ### Association
 
