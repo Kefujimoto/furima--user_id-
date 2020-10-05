@@ -47,7 +47,6 @@ Things you may want to cover:
 
 | Column | Type   | Options     |
 | ------ | ------ | ----------- |
-<<<<<<< Updated upstream
 | name     | string     | null: false      |
 | explain  | text       | null: false      |
 | category | integer    | null: false      |
@@ -74,7 +73,6 @@ Things you may want to cover:
 ### Association
 
 - has_one :order
->>>>>>> Stashed changes
 - has_one :user
 
 ## orders テーブル
