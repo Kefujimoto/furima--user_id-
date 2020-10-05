@@ -29,7 +29,7 @@ Things you may want to cover:
 | Column          | Type    | Options     |
 | --------        | ------  | ----------- |
 | nickname        | string  | null: false |
-| mailadress      | string  | null: false |
+| email           | string  | null: false |
 | password        | string  | null: false |
 | familyname      | string  | null: false |
 | name            | string  | null: false |
@@ -58,12 +58,6 @@ Things you may want to cover:
 
 ### Association
 
-- has_one :orders
-- has_one :adress
-
-
-### Association
-
 - has_one :order
 - belongs_to :user
 
@@ -71,7 +65,7 @@ Things you may want to cover:
 | Column| Type       | Options                        |
 | ------| ------     | -----------                    |
 | user  | references | foreign_key: true, null: false |
-| items | references | foreign_key: true, null: false |
+| item  | references | foreign_key: true, null: false |
 
 ### Association
 
@@ -79,16 +73,16 @@ Things you may want to cover:
 -  belongs_to :item 
 -  has_one :adress
 
-## adresses テーブル
+## addresses テーブル
 | Column        | Type       | Options                       |
 | ------        | ------     | -----------                   |
 | post_number   | string     | null: false                   |
 | live_area_id  | integer    | null: false                   |
 | live_city     | string     | null: false                   |
-| city_number   | integer    | null: false                   |
+| city_number   | string     | null: false                   |
 | building_name | string     |                               |
 | phone_number  | string     | null: false                   |
 | order         | references | foreign_key:true, null: false |
 
 ### Association
-- belongs_to :user
+- belongs_to :order
